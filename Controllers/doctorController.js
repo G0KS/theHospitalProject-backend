@@ -1,13 +1,13 @@
-const DOCTORS = require("../Models/doctorSchema");
+const doctors = require("../Models/doctorSchema");
 
 exports.addDoctor = async (req, res) => {
    const { id, name, image, gender, age, department, email, time } = req.body;
    try {
-      const doctor = await DOCTORS.findOne({ id });
+      const doctor = await doctors.findOne({ id });
       if (doctor) {
          res.status(403).json("ID already exists");
       } else {
-         const newDoctor = new DOCTORS({
+         const newDoctor = new doctors({
             id,
             name,
             image,
@@ -29,7 +29,7 @@ exports.addDoctor = async (req, res) => {
 
 exports.getAllDoctors = async (req, res) => {
    try {
-      const allDoctors = await DOCTORS.find();
+      const allDoctors = await doctors.find();
       res.status(200).json(allDoctors);
    } catch (err) {
       res.status(401).json(err);
