@@ -10,7 +10,7 @@ const doctorSchema = mongoose.Schema({
       type: String,
       required: true,
    },
-   image:{
+   image: {
       type: String,
       required: true,
    },
@@ -28,14 +28,6 @@ const doctorSchema = mongoose.Schema({
    },
    email: {
       type: String,
-      required: true,
-   },
-   time: {
-      type: String,
-      required: true,
-   },
-   patients: {
-      type: Array,
       required: true,
    },
 });

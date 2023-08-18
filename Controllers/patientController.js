@@ -2,6 +2,7 @@ const patients = require("../Models/patientSchema");
 
 exports.addPatient = async (req, res) => {
    const { id, pname, age, place, gender, department, doctor } = req.body;
+
    try {
       const newPatient = new patients({
          id,
